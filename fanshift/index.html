@@ -288,6 +288,34 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .calc .out{margin-top:16px;background:var(--pale);border-radius:10px;padding:14px 16px;color:var(--navy);font-weight:900;font-size:17px;line-height:1.7;min-height:56px}
 .calc .out small{display:block;font-weight:500;font-size:13px;color:var(--muted)}
 .fit .card h3{font-size:17px;color:var(--navy);margin:0}
+/* 06b 物語の節 */
+.story{background:linear-gradient(180deg,#fff 0%,var(--pale2) 100%)}
+.story h2{line-height:1.5}
+.story .p{font-size:16.5px;line-height:2.05}
+.story .quote-line{margin:26px 0;padding:18px 22px;border-left:4px solid var(--blue);background:var(--pale);border-radius:10px;font-size:19px;font-weight:900;color:var(--navy);line-height:1.7}
+.story .story-end{margin-top:26px;font-weight:900;color:var(--navy);font-size:18px;line-height:1.9}
+/* ヒーローの2つのご案内（参照LPと同じく最初の画面に置く） */
+.worry{padding:10px 16px;margin:14px 0 14px}
+.worry p{font-size:13.5px;line-height:1.75}
+.hchoices{margin-top:6px}
+.hc-label{font-size:13px;font-weight:900;color:var(--blue);letter-spacing:.08em;margin:0 0 8px}
+.hc{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;text-decoration:none;border-radius:18px;padding:11px 16px;margin-bottom:9px;box-shadow:var(--shadow2);transition:transform .15s}
+.hc:hover{transform:translateY(-2px)}
+.hc i{font-style:normal;display:inline-flex;width:44px;height:44px;border-radius:50%;align-items:center;justify-content:center;font-weight:900;font-size:15px}
+.hc small{display:block;font-size:12px;font-weight:900;letter-spacing:.04em}
+.hc b{display:block;font-size:18px;font-weight:900;line-height:1.4;word-break:keep-all}
+.hc em{display:block;font-style:normal;font-size:12.5px;line-height:1.5;margin-top:1px}
+.hc u{text-decoration:none;font-weight:900;font-size:14px;border-radius:999px;padding:9px 14px;white-space:nowrap}
+.hc.try{background:#fff;border:2px solid var(--blue)}
+.hc.try i{background:var(--blue);color:#fff}
+.hc.try small{color:var(--blue)}.hc.try b{color:var(--navy)}.hc.try em{color:var(--muted)}
+.hc.try u{border:2px solid var(--blue);color:var(--blue)}
+.hc.join{background:linear-gradient(160deg,#12305F,var(--navy2));border:2px solid #12305F}
+.hc.join i{background:var(--cta1);color:var(--navy)}
+.hc.join small{color:#CFE0FF}.hc.join b{color:#fff}.hc.join em{color:#EAF3FF}
+.hc.join u{background:linear-gradient(90deg,var(--cta1),var(--cta2));color:#1a1200}
+.hero .wrap{padding-top:40px;padding-bottom:48px}
+.hero h1.h1fs{margin:8px 0 6px}
 @media (max-width:900px){.topnav a.nav{display:none}.grid.g3.changes{grid-template-columns:1fr}}
 @media (max-width:640px){.topbar .topnav .btn{display:inline-block;white-space:nowrap;font-size:12.5px;padding:9px 12px}.topbar .brand small{display:none}.topbar .brand span{white-space:nowrap;font-size:14px}}
 .topnav .ls{display:none}
@@ -297,6 +325,8 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   .hero h1.h1fs{font-size:25px}.hero .sec-label{white-space:normal;line-height:1.6}.hero .wrap>div{min-width:0}
   .day{grid-template-columns:1fr}.day .d{width:120px}.formula{font-size:17px}
   .choices,.nums,.pillars,.hsj,.calc .row{grid-template-columns:1fr}
+  .hc{grid-template-columns:32px 1fr auto;gap:10px;padding:12px;margin-bottom:8px}.hc i{width:32px;height:32px;font-size:12px}.hc em{display:none}.hc.join em{display:block;font-size:12.5px;word-break:keep-all}.hc em .em2{display:none}.hc b{font-size:15.5px;line-height:1.4}.hc small{font-size:11px}.hc u{font-size:12.5px;padding:8px 10px}
+  .hero .wrap{padding-top:22px}.hero .chips:first-of-type{display:none}.worry{margin:10px 0}.hc-label{margin-bottom:6px}
   .choice{padding:22px 20px}.choice h3{font-size:21px}.choice .go .btn{display:block;text-align:center;padding:14px 12px}
   .support{grid-template-columns:1fr;gap:10px}.support .lab{justify-self:start;padding:10px 16px}
   .support dl{grid-template-columns:1fr}.support dt{margin-top:6px}
@@ -319,11 +349,15 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
     <span class="sec-label">通販・D2C事業者の方へ ｜ 短い動画＋5日間のワーク 無料</span>
     <div class="chips" style="margin:0 0 6px"><span class="chip" style="background:var(--navy);color:#fff;border-color:var(--navy)">ファンシフト 5日間ワーク</span></div>
     <h1 class="h1fs"><span style="white-space:nowrap">売上表の上位にいる</span><br><span style="white-space:nowrap">お客様は、</span><br><span style="white-space:nowrap"><span class="em">本当にファン</span>でしょうか。</span></h1>
-    <p class="tag">優良顧客を、語ってくださるファンへ。</p>
+    <p class="tag">優良顧客を、<span style="display:inline-block">語ってくださるファンへ。</span></p>
     <div class="worry"><p>「リピートはあるのに、なぜか伸びない」</p><p>「上位のお客様が、静かにいなくなっている気がする」</p><p>「値引きとポイント以外に、打つ手が思いつかない」</p></div>
-    <p class="lead">値引きもポイントも増やさずに、お客様との関係を「測れる仕組み」に変えていく。その最初の一歩を、このページでご用意しています。</p>
-    <a class="btn" href="https://luce-tokyo.net/p/r/JgTqClWj" data-cta="hero">無料で5日間ワークを受け取る →</a>
-    <p class="note" style="margin-top:10px">参加費無料・お名前とメールアドレスだけ。5日間のメールの中で有料のご案内があります（お申し込みは任意です）。5日間のあとは、毎朝のメルマガもお届けします（いつでも停止できます）。</p><a class="subcta" href="#choices" data-cta="hero-choices">まずは登録せずに試してみる ↓</a>
+    <div class="hchoices" id="choices">
+      <p class="hc-label">このページの、2つのご案内</p>
+      <a class="hc try" href="#try" data-cta="try-hero"><i>01</i><span><small>登録不要・その場で3分</small><b>その場で書ける<wbr>3つの問い</b><em>頼んでいないのにお礼をくださった方は、どなたでしたか。</em></span><u>書いてみる ↓</u></a>
+      <a class="hc join" href="https://luce-tokyo.net/p/r/JgTqClWj" data-cta="hero"><i>02</i><span><small>無料・5日間メールでお届け</small><b>ファンシフト<wbr> 5日間ワーク</b><em>5日間で、<wbr>最初の一手を<wbr>紙一枚に。<span class="em2">短い動画と3つのワークをお届けします。</span></em></span><u>受け取る →</u></a>
+      <p class="note" style="margin-top:10px">ご登録はお名前とメールアドレスだけです。5日間のメールの中で有料のご案内があります（お申し込みは任意です）。5日間のあとは、毎朝のメルマガもお届けします（いつでも停止できます）。</p>
+      <a class="subcta" href="#calc" data-cta="calc-hero">もう一歩：自社のファンシフト率を、計算してみる ↓（登録不要）</a>
+    </div>
     <p class="note" style="margin-top:14px">講師：通販プロデューサー　西村公児（株式会社ルーチェ 代表取締役）</p>
   </div>
   <div class="kv" role="img" aria-label="見つける・届ける・育てるの一周と、紹介・反応・推奨の応援行動が、1日目の動画を囲んで回る">
@@ -343,30 +377,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   </div>
 </div></header>
 
-<!-- 03 2つのご案内（★v2） -->
-<section id="choices"><div class="wrap">
-  <div class="col" style="text-align:center"><span class="sec-label">TWO WAYS</span>
-  <h2>このページの、<span class="em">2つのご案内</span>。</h2>
-  <p class="p" style="text-align:left">まずは登録せずに、その場で3分。続けてみたいと感じたら、無料の5日間ワークへ。どちらからでも始められます。</p></div>
-  
-  <div class="choices">
-    <div class="choice try">
-      <div class="tag2"><i>01</i>その場で書ける<span class="pill">登録不要・3分</span></div>
-      <h3>3つの問いに、<br>この画面で答えてみる</h3>
-      <p>頼んでいないのにお礼をくださった方。紹介してくださった方。販売をやめたら困ると言ってくださりそうな方。ファンの兆しがあるお客様を、今ここで探してみてください。</p>
-      <div class="go"><a class="btn sub" href="#try" data-cta="try-top">今すぐ書いてみる ↓</a><small>入力した内容は、保存も送信もしません。</small></div>
-    </div>
-    <div class="choice join">
-      <div class="tag2"><i>02</i>5日間ワーク<span class="pill">無料・要登録</span></div>
-      <h3>5日間で、<br>最初の一手を紙一枚に</h3>
-      <p>短い動画と、3つのワーク（各3〜5分）を、5日間メールでお届けします。浮かんだお客様を、自社の物差しと最初の一手にしていきます。</p>
-      <div class="go"><a class="btn" href="https://luce-tokyo.net/p/r/JgTqClWj" data-cta="join-top">無料で5日間ワークを受け取る →</a><small>ご登録はお名前とメールアドレスだけです。5日間のメールの中で有料の会員の場のご案内があります（お申し込みは任意です）。5日間のあとは、毎朝のメルマガもお届けします（いつでも停止できます）。</small></div>
-    </div>
-  </div>
-  <p class="choices-more">もう一歩：<a href="#calc" data-cta="calc-top">自社のファンシフト率を、計算してみる ↓</a>（登録不要）</p>
-</div></section>
 
-<!-- 04 その場で書ける3つの問い（v1 05 TRY IT NOW を格上げ） -->
 <section class="alt" id="try"><div class="wrap"><div class="col">
   <span class="sec-label">01 ・ TRY IT NOW ・ 登録不要</span>
   <h2>試しに、今、<span class="em">三つだけ</span>書いてみてください。</h2>
@@ -381,7 +392,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   </div>
 </div></div></section>
 
-<!-- 05 数字の証拠（v1 07 MEASURE 後半・08 PROFILE の数字） -->
 <section><div class="wrap"><div class="col">
   <span class="sec-label">EVIDENCE</span>
   <h2>買い続けていただく構造は、<br>ここまで<span class="em">数字で追えます</span>。</h2>
@@ -395,7 +405,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="p" style="margin-top:18px">けれども、その方々が「なぜ」残ってくださっているのかは、この係数からは分かりません。<b>その「なぜ」が表れる行動を数えるのが、ファンシフトの物差しです。</b></p>
 </div></div></section>
 
-<!-- 06 3つの変化（★v2・5日間の設計。感想の引用ではない） -->
 <section class="alt"><div class="wrap"><div class="col">
   <span class="sec-label">3 CHANGES</span>
   <h2>5日間で、机の上に残る<br><span class="em">3つの変化</span>。</h2>
@@ -407,7 +416,19 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="note" style="margin-top:12px">ワークに書いていただいた場合に、手元に残るものです。参加された方の感想を引用したものではありません。</p>
 </div></div></section>
 
-<!-- 07 橋渡しCTA（★v2） -->
+<section class="story"><div class="wrap"><div class="col">
+  <span class="sec-label">STORY</span>
+  <h2>紙一枚が、<br>机の上にある朝。</h2>
+  <p class="p">5日目の夜が明けた朝を、少しだけ想像してみてください。</p>
+  <p class="p">いつものように机に向かうと、5日間で書いた紙が重なっています。いちばん上の一枚が、あなたの会社の、最初の一手です。書いてあるのは、三つだけ。誰に、何をお渡しするか、いつ確かめるか。たとえば「あの方たちに、選び続けてくださる理由を、短いお手紙で伺う。90日後に、お返事をくださった方を数える」。</p>
+  <p class="p">これまで、月末に売上表を開くたびに、どこか落ち着かない気持ちがあったかもしれません。何かしなければと思いながら、気づけば値引きの案内を作っていた、という月もあったのではないでしょうか。この朝は違います。今日やることが、もう決まっています。</p>
+  <p class="quote-line">数字の向こうに、顔の浮かぶお客様がいる。</p>
+  <p class="p">それだけで、書く案内の言葉は変わります。「お客様各位」ではなく、あの方に向けて書く一文になるからです。</p>
+  <p class="p">その一手が、すぐに売上に変わるとは限りません。けれども、もし一言でも返ってきたら、その一言を読む朝は、きっと少しうれしいはずです。そしてその一言が、次の一手の材料になります。紙一枚から記録が始まり、記録があるから、判断ができるようになります。</p>
+  <p class="p">担当者が替わっても、紙は残ります。「うちのファンは、この方たちです」と、社内の誰かに説明できる言葉も残ります。熱意のある人が抜けても止まらない、最初の手がかりです。</p>
+  <p class="p story-end">値引きもポイントも増やさずに、お客様との関係を育てていく。<br>その最初の朝を、5日間でつくりましょう。</p>
+</div></div></section>
+
 <section class="beat"><div class="wrap"><div class="col" style="text-align:center">
   <span class="sec-label">NEXT</span>
   <h2>浮かんだその方を、<br>5日間で、自社の物差しに。</h2>
@@ -416,7 +437,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="sub" style="margin-top:12px">参加費 無料 ・ お名前とメールアドレスだけ<br>5日間のメールの中で有料のご案内があります（お申し込みは任意）。5日間のあとは毎朝のメルマガ（いつでも停止できます）。</p>
 </div></div></section>
 
-<!-- 08〜11 体験の全体像と3つの支え（v1 04 FIVE DAYS を分解） -->
 <section><div class="wrap"><div class="col">
   <span class="sec-label">02 ・ FIVE DAYS ・ 無料・要登録</span>
   <h2>5日間、<span class="em">3つの支え</span>で、<br>最初の一手まで。</h2>
@@ -450,7 +470,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <div class="days"><div class="day"><div class="d">1日目<small>ご登録の直後</small></div><div><p class="s">メールの件名</p><b>売上表の上位にいるお客様は、本当にファンでしょうか</b><p class="w">短い動画。観終わると、その下に手紙が出てきます（手紙の後半は、ファンシフトクラブのご案内です）。</p></div></div><div class="day"><div class="d">2日目<small>毎朝7時</small></div><div><p class="s">メールの件名</p><b>「優良顧客は誰ですか」では、ファンは見つかりません</b><p class="w">売上表に出ない、3人のお客様（書くのは3分）</p></div></div><div class="day"><div class="d">3日目<small>毎朝7時</small></div><div><p class="s">メールの件名</p><b>少人数なのに長く選ばれ続けた会社が、数字の先に見ようとしていたもの</b><p class="w">自社のファンシフトは、三行で決まります（書くのは5分）</p></div></div><div class="day"><div class="d">4日目<small>毎朝7時</small></div><div><p class="s">メールの件名</p><b>「結局、値引きしか思いつかない」の正体</b><p class="w">最初の一手は、紙一枚で決まります（書くのは5分）</p></div></div><div class="day last"><div class="d">5日目<small>毎朝7時／夜21時</small></div><div><p class="s">最終日</p><b>ファン化が、続かなかった理由</b><p class="w">記録と判断の仕組みのお話と、ファンシフトクラブのご案内（その夜23:59まで）。</p></div></div></div>
 </div></div></section>
 
-<!-- 12 継続する価値（★v2・無料と有料の境目。価格は書かない＝西村さん決定） -->
 <section class="alt"><div class="wrap"><div class="col">
   <span class="sec-label">NEXT STEP</span>
   <h2>その先も、<br><span class="em">続けたい方へ</span>。</h2>
@@ -463,7 +482,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="p" style="margin-top:16px">ファンシフトクラブの内容や条件は、1日目の手紙の後半と、1〜4日目のメールの追伸、5日目の朝と夜のメールでご案内します。5日間の途中でもお申し込みいただけます。ご案内は5日目の夜23:59までです。お申し込みにならなくても、5日間のメールとワークは最後までお届けします。</p>
 </div></div></section>
 
-<!-- 13 条件と主要CTA（v1 INVITATION） -->
 <section class="beat final" id="cta"><div class="wrap"><div class="col" style="text-align:center">
   <span class="sec-label">INVITATION</span>
   <h2>まずは5日間、無料で。</h2>
@@ -474,7 +492,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <div class="chips" style="justify-content:center"><span class="chip">参加費 無料</span><span class="chip">お名前とメールアドレスだけ</span><span class="chip">2日目から毎朝7時</span><span class="chip">有料のご案内は5日目の夜まで・申込は任意</span><span class="chip">5日間のあとは毎朝のメルマガ（いつでも停止可）</span></div>
 </div></div></section>
 
-<!-- 14 別の場面の事例（v1 06 CASE） -->
 <section><div class="wrap"><div class="col">
   <span class="sec-label">CASE</span>
   <h2>少人数なのに長く選ばれ続けた会社が、<br>数字の先に見ようとしていたもの</h2>
@@ -483,7 +500,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="p"><b>その行動を数えようとしたのが、ファンシフトの出発点です。</b></p>
 </div></div></section>
 
-<!-- 15 講師（v1 08 PROFILE） -->
 <section class="alt"><div class="wrap"><div class="col">
   <span class="sec-label">PROFILE</span>
   <h2>通販の現場で、<br>売上表の外を見続けてきた講師がお送りします。</h2>
@@ -503,7 +519,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   </div>
 </div></div></section>
 
-<!-- 16 3つの視点（v1 02 TRAP・03 DIFFERENCE・NORTH STAR を短く） -->
 <section><div class="wrap"><div class="col">
   <span class="sec-label">HOP ・ STEP ・ JUMP</span>
   <h2>見つける、届ける、<span class="em">育てる</span>。</h2>
@@ -519,7 +534,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="p" style="text-align:center">この考え方を、私は<b>ファンシフト</b>と呼んでいます。</p>
 </div></div></section>
 
-<!-- 17 操作できる図版＝ファンシフト率の計算（★v2・入力は保存しない） -->
 <section class="alt" id="calc"><div class="wrap"><div class="col">
   <span class="sec-label">MEASURE ・ 登録不要</span>
   <h2>自社の<span class="em">ファンシフト率</span>を、<br>出してみる。</h2>
@@ -536,7 +550,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="p">応援行動を記録していない場合は、数字が出なくて当然です。記録する場所を決めるところから、5日間のワークで扱います。</p>
 </div></div></section>
 
-<!-- 18 最終選択（★v2） -->
 <section><div class="wrap">
   <div class="col" style="text-align:center"><span class="sec-label">TWO WAYS</span>
   <h2>このページの、<span class="em">2つのご案内</span>。</h2></div>
@@ -558,7 +571,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <p class="choices-more">もう一歩：<a href="#calc" data-cta="calc-end">自社のファンシフト率を、計算してみる ↓</a>（登録不要）</p>
 </div></section>
 
-<!-- 19 よくある質問（v1 09 FIT・10 FAQ） -->
 <section class="alt" id="faq"><div class="wrap">
   <div class="col"><span class="sec-label">FAQ</span><h2>よくあるご質問</h2></div>
   <div class="grid g2">
