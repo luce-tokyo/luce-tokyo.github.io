@@ -290,6 +290,14 @@ if (seen() || /^#part[1-5]$/.test(location.hash)) openLetter();
 function goToPart(){ if (/^#part[1-5]$/.test(location.hash) && letter.classList.contains("open")) document.querySelector(location.hash).scrollIntoView(); }
 window.addEventListener("load", () => setTimeout(goToPart, 300));
 window.addEventListener("hashchange", goToPart);
+// 締切タイマー（MyASP）を一人ずつ効かせるため、メールから来た item_user_id を申込ボタンに引き継ぐ
+(function(){
+  const uid = new URLSearchParams(location.search).get("item_user_id");
+  if (!uid) return;
+  document.querySelectorAll('a[href^="https://luce-tokyo.net/p/r/rKeBPhlP"]').forEach(a => {
+    const u = new URL(a.href); u.searchParams.set("item_user_id", uid); a.href = u.toString();
+  });
+})();
 </script>
 </body>
 </html>
