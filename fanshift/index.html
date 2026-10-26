@@ -288,6 +288,23 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .calc .out{margin-top:16px;background:var(--pale);border-radius:10px;padding:14px 16px;color:var(--navy);font-weight:900;font-size:17px;line-height:1.7;min-height:56px}
 .calc .out small{display:block;font-weight:500;font-size:13px;color:var(--muted)}
 .fit .card h3{font-size:17px;color:var(--navy);margin:0}
+/* 14 事例の数字（2時点） */
+.casetbl{width:100%;border-collapse:collapse;margin:6px 0 18px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:15px}
+.casetbl th{background:var(--pale);color:var(--navy);font-weight:900;font-size:13px;padding:10px 12px;text-align:left}
+.casetbl td{padding:12px;border-top:1px solid var(--line);color:var(--ink)}
+.casetbl td+td{font-weight:900;color:var(--navy);text-align:right}
+.casetbl th+th{text-align:right}
+/* 06 記入済みの見本（三枚） */
+.smp-title{margin:30px 0 12px;font-size:19px;color:var(--navy)}
+.smp-title span{font-size:14px;color:var(--muted);font-weight:700}
+.smp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sheet{background:#fff;border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:6px;padding:18px 18px 16px;box-shadow:var(--shadow);background-image:repeating-linear-gradient(180deg,transparent 0,transparent 31px,var(--pale) 31px,var(--pale) 32px)}
+.sheet small{display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--blue);border-radius:999px;padding:2px 12px}
+.sheet b{display:block;color:var(--navy);font-size:16px;line-height:1.5;margin:8px 0 6px}
+.sheet dl{margin:0}
+.sheet dt{font-size:12.5px;color:var(--blue);font-weight:900;margin-top:8px}
+.sheet dd{margin:2px 0 0;font-size:14px;line-height:1.7;color:var(--ink)}
+@media (max-width:900px){.smp{grid-template-columns:1fr}}
 /* 06a ナラティブの前のコピー */
 .copyband{padding:56px 0}
 .copyband .cb{margin:0;color:#fff;font-size:30px;font-weight:900;line-height:1.65;letter-spacing:.02em}
@@ -400,15 +417,16 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 
 <section><div class="wrap"><div class="col">
   <span class="sec-label">EVIDENCE</span>
-  <h2>買い続けていただく構造は、<br>ここまで<span class="em">数字で追えます</span>。</h2>
+  <h2>買い続けてくださることは、<br><span class="em">数字で分かる</span>。<br>応援してくださる理由は、<br>もう一歩先にあります。</h2>
   <p class="p">私がご支援の現場で使っている目安に、存続水準の係数があります。福岡県八女市の熟成黒ニンニクの通販事業では、年間のリピート率60%以上が続いている構造で、初回のお客様のうち、2回目の購入まで残る方が88%以上、3回目まで残る方が80%以上を保っていました。</p>
   <div class="nums">
     <div class="card"><small>2回目の購入まで<br>残る方</small><b>88%以上</b></div>
     <div class="card"><small>3回目の購入まで<br>残る方</small><b>80%以上</b></div>
     <div class="card"><small>年間の<br>リピート率</small><b>60%以上</b></div>
   </div>
-  <p class="note">当方の支援先での実測です。集計の定義は会社ごとに異なるため、目安としてご覧ください。</p>
-  <p class="p" style="margin-top:18px">けれども、その方々が「なぜ」残ってくださっているのかは、この係数からは分かりません。<b>その「なぜ」が表れる行動を数えるのが、ファンシフトの物差しです。</b></p>
+  <p class="note">当方の支援先での実測です。2回目・3回目は、初回のお客様のうち、その回の購入まで残った方の割合です。集計の定義は会社ごとに異なるため、目安としてご覧ください。<b>ファンシフトを行った結果の数字ではありません。</b>買い続けていただく構造を示す目安です。</p>
+  <p class="p" style="margin-top:18px">この事業は、ファンコミュニティと、共感を軸にした発信で、関係を育ててきました。新規の獲得数も、定期のリピート率も、きちんと数えていました。それでも、数字だけでは見えないものが残りました。「なぜ、この方は選び続けてくださるのか」です。</p>
+  <p class="p">その理由は、頼まれていないお便りや、どなたかへの紹介といった<b>行動</b>に表れます。<b>その行動を数えようとしたのが、ファンシフトの出発点です。</b></p>
 </div></div></section>
 
 <section class="alt"><div class="wrap"><div class="col">
@@ -420,6 +438,23 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
     <div class="card"><small>3枚目</small><b>最初の一手を、<br>紙一枚に書いてみる</b><p>明日から試せる小さな一手を、一枚に決めます。</p></div>
   </div>
   <p class="note" style="margin-top:12px">ワークに書いていただいた場合に、手元に残るものです。参加された方の感想を引用したものではありません。</p>
+  <h3 class="smp-title">記入済みの見本　<span>定期通販の場合・書き方のための架空の例</span></h3>
+  <p class="note" style="margin:-4px 0 12px">書き方の見本として作った例で、実在の会社やお客様ではありません。2枚目と3枚目は、3日目・4日目のワークページの見本と同じ例です。</p>
+  <div class="smp">
+    <div class="sheet"><small>1枚目</small><b>売上表に出ない、三人のお客様</b>
+      <dl><dt>頼んでいないのに、お礼をくださった方</dt><dd>神奈川の50代の女性（使い方の工夫を、メールで教えてくださった）</dd>
+      <dt>紹介してくださった方</dt><dd>福岡の40代の男性（ご家族とご同僚を、紹介してくださった）</dd>
+      <dt>販売をやめたら、困ると言ってくださりそうな方</dt><dd>静岡の60代の女性（朝の習慣になっていると書いてくださった）</dd></dl></div>
+    <div class="sheet"><small>2枚目</small><b>自社の物差しと呼び名（三行）</b>
+      <dl><dt>優良顧客の条件</dt><dd>過去12か月で6回以上購入、継続6か月以上</dd>
+      <dt>記録できる応援の行動</dt><dd>頼んでいないお礼の返信や、使い方の工夫のお便り、紹介コードの利用</dd>
+      <dt>呼び名</dt><dd>使い方の先生</dd></dl></div>
+    <div class="sheet"><small>3枚目</small><b>最初の一手（紙一枚）</b>
+      <dl><dt>誰に</dt><dd>過去12か月で6回以上購入し、頼んでいないのにお礼の返信をくださった方（12人）</dd>
+      <dt>何を渡すか</dt><dd>「続けてくださっている理由」を伺う一筆と、新商品の先行試食へのご招待</dd>
+      <dt>いつ確かめるか</dt><dd>90日後、その日に条件を満たしている優良顧客のうち、紹介・自発的な反応・推奨のいずれかがあった人数（対象人数も併記）。このうち、今回の一手で伺ったことへのお返事は、別に記録しておく</dd></dl></div>
+  </div>
+
 </div></div></section>
 
 <section class="beat copyband"><div class="wrap"><div class="col" style="text-align:center">
@@ -430,7 +465,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   <span class="sec-label">STORY</span>
   <h2>紙一枚が、<br>机の上にある朝。</h2>
   <p class="p">5日目の夜が明けた朝を、少しだけ想像してみてください。</p>
-  <p class="p">いつものように机に向かうと、5日間で書いた紙が重なっています。いちばん上の一枚が、あなたの会社の、最初の一手です。書いてあるのは、三つだけ。誰に、何をお渡しするか、いつ確かめるか。たとえば「あの方たちに、選び続けてくださる理由を、短いお手紙で伺う。90日後に、お返事をくださった方を数える」。</p>
+  <p class="p">いつものように机に向かうと、5日間で書いた紙が重なっています。いちばん上の一枚が、あなたの会社の、最初の一手です。書いてあるのは、三つだけ。誰に、何をお渡しするか、いつ確かめるか。たとえば「あの方たちに、選び続けてくださる理由を、短いお手紙で伺う。90日後に、お返事と応援の行動があった方を数える」。</p>
   <p class="p">これまで、月末に売上表を開くたびに、どこか落ち着かない気持ちがあったかもしれません。何かしなければと思いながら、気づけば値引きの案内を作っていた、という月もあったのではないでしょうか。この朝は違います。今日やることが、もう決まっています。</p>
   <p class="quote-line">数字の向こうに、顔の浮かぶお客様がいる。</p>
   <p class="p">それだけで、書く案内の言葉は変わります。「お客様各位」ではなく、あの方に向けて書く一文になるからです。</p>
@@ -503,11 +538,18 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 </div></div></section>
 
 <section><div class="wrap"><div class="col">
-  <span class="sec-label">CASE</span>
-  <h2>少人数なのに長く選ばれ続けた会社が、<br>数字の先に見ようとしていたもの</h2>
-  <p class="p">少人数でも、長く選ばれ続けた、福岡県八女市の熟成黒ニンニクの通販事業がありました。ファンコミュニティと、共感を軸にした発信で、関係を育ててきた会社です。新規の獲得数も、定期のリピート率も、きちんと数えていました。それでも、数字だけでは見えないものが残りました。「なぜ、この方は選び続けてくださるのか」です。</p>
-  <p class="p">同じように買い続けてくださる方でも、選ぶ理由は一人ずつ違います。購入の履歴だけでは、その違いは分かりません。けれども、その理由は、頼まれていないお便りや、どなたかへの紹介といった<b>行動</b>に表れます。</p>
-  <p class="p"><b>その行動を数えようとしたのが、ファンシフトの出発点です。</b></p>
+  <span class="sec-label">ANOTHER CASE</span>
+  <h2><span class="em">美容院の自社OEMシャンプー</span>でも、<br>同じ問いが立ちます。</h2>
+  <p class="p">美容院で、自社のOEMシャンプーを販売していた事例です。ここでは、LTVとリピート率を指標に、長く選ばれる事業づくりを考えてきました。一度の売上だけでなく、購入後の関係に目を向ける視点です。</p>
+  <table class="casetbl">
+    <thead><tr><th>集計の時期</th><th>顧客の平均LTV</th><th>リピート率</th></tr></thead>
+    <tbody><tr><td>2026年1月</td><td>34,025円</td><td>61.9%</td></tr>
+    <tr><td>2026年2月</td><td>33,837円</td><td>61.8%</td></tr></tbody>
+  </table>
+  <p class="p">月が替わっても、数字はほぼ同じ水準でした。買い続けていただく構造は、ここまで数字で見えます。</p>
+  <p class="p">けれども、同じように買い続けてくださる方でも、選ぶ理由や、ブランドとの関わり方は異なります。店頭でお顔を合わせていても、購買の履歴だけで、その違いを判断することはできません。</p>
+  <p class="p"><b>「買い続ける」と「応援する」を、一緒に見る。</b>業種が違っても、売上表の外にいるお客様を見つけ、物差しをつけ、最初の一手を決める順番は同じです。化粧品やギフトの通販での三行の書き方は、3日目のワークで見本をお見せします。</p>
+  <p class="note">数字は、当方が支援した美容院の2026年1月・2月の集計です。集計の方法は会社ごとに異なるため、目安としてご覧ください。ファンシフトの導入前後を比べたものではなく、ファンシフトの導入実績でもありません。紹介・推奨の増加やファンシフト率の改善を示すものではありません。</p>
 </div></div></section>
 
 <section class="alt"><div class="wrap"><div class="col">
@@ -547,6 +589,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 <section class="alt" id="calc"><div class="wrap"><div class="col">
   <span class="sec-label">MEASURE ・ 登録不要</span>
   <h2>自社の<span class="em">ファンシフト率</span>を、<br>出してみる。</h2>
+  <div class="point"><b>ファンの兆しは、売上上位ではないお客様にも見つかります。</b>そのうえで、優良顧客との関係の変化を追う物差しとして使うのが「ファンシフト率」です。3つの問いで見つけた方は記録しておき、ファンシフト率では、自社で決めた優良顧客の条件を満たす方を対象に数えます。</div>
   <div class="formula">ファンシフト率 ＝<br>応援行動を確認できた優良顧客数 ÷ 対象の優良顧客数 <span style="white-space:nowrap">× 100</span><small>対象の人数も、必ず一緒に書きます。</small></div>
   <p class="p">対象は、集計した日に、自社で決めた購買・継続の条件を満たしている優良顧客です。その方の直近90日間に、紹介・自発的な反応・推奨のいずれかがあったかを見ます。同じ方が複数の行動をしても、1人として数えます。開封・クリック・購入だけでは数えません。</p>
   <div class="calc">
