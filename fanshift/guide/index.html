@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>優良顧客とファンの見分け方｜FanShift</title>
+<!-- FanShift 指針（簡易版）。入力内容は送信も保存もしない。 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* 一枚の指針：問い → 二つの物差し → 評価の地図（2×2）→ 判定 → 率 → 記録の型 → 四つの言葉 → 守ること
+   ファンシフト広告TOPのブルーを基調。部品に黒は使わない（文字のみ濃紺）。明るい一枚で固定。 */
+:root{
+  --bg:#F6F9FE;
+  --paper:#FFFFFF;
+  --ink:#1A2333;
+  --muted:#5A6B85;
+  --line:#D5E2F5;
+  --pale:#EEF4FD;
+  --blue:#0361FE;
+  --blue-deep:#0035C1;
+  --gold:#E8AC2C;
+  --gold-pale:#FDF5E3;
+  --gold-ink:#7A5200;
+  --on-blue:#FFFFFF;
+  --display:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.4}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--blue);font-weight:700}
+
+/* 冒頭 */
+header.hero{background:var(--blue);color:var(--on-blue)}
+header.hero .wrap{padding-block:48px 40px;display:grid;gap:18px}
+header.hero .eyebrow{color:#CFE0FF}
+header.hero h1{font-size:clamp(26px,5vw,38px);font-weight:900}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.answer div{background:var(--paper);color:var(--ink);border-radius:10px;padding:16px 18px;display:grid;gap:4px}
+.answer .k{font-family:var(--display);font-weight:900;font-size:19px}
+.answer .k.fan{color:var(--gold-ink)}
+.answer .k.yu{color:var(--blue-deep)}
+.answer small{color:var(--muted);font-size:13.5px;line-height:1.7}
+.hero .lead{font-size:15.5px;color:#E6EFFF}
+.hero .lead b{color:var(--on-blue)}
+
+section{padding-block:44px 8px}
+section .wrap{display:grid;gap:18px}
+section h2{font-size:clamp(21px,3.6vw,26px);font-weight:900}
+.note{font-size:14px;color:var(--muted)}
+
+/* 二つの物差し */
+.rulers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ruler{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.ruler h3{font-size:17px}
+.ruler .tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;justify-self:start}
+.ruler.yu .tag{background:var(--pale);color:var(--blue-deep)}
+.ruler.fan .tag{background:var(--gold-pale);color:var(--gold-ink)}
+.ruler ul{margin:0;padding-left:1.2em;font-size:14.5px}
+.acts{display:grid;gap:6px}
+.act{display:grid;grid-template-columns:7.2em 1fr;gap:8px;font-size:14.5px;border-top:1px dashed var(--line);padding-top:6px}
+.act b{color:var(--gold-ink)}
+.nocount{font-size:13.5px;color:var(--muted);background:var(--bg);border-radius:6px;padding:8px 10px}
+
+/* 評価の地図 */
+.mapbox{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;overflow-x:auto}
+.map{display:grid;grid-template-columns:5.6em 1fr 1fr;gap:8px;min-width:520px}
+.axis{font-size:12.5px;font-weight:700;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.5;padding:4px}
+.axis.top{background:var(--gold-pale);color:var(--gold-ink);border-radius:6px}
+.axis.side{background:var(--pale);color:var(--blue-deep);border-radius:6px}
+.cell{border-radius:10px;padding:14px;display:grid;gap:6px;align-content:start;border:2px solid transparent;transition:box-shadow .2s,transform .2s}
+.cell .mark{font-size:12px;font-weight:700;letter-spacing:.04em}
+.cell h3{font-size:16.5px}
+.cell p{font-size:13.5px;line-height:1.7}
+.cell .count{font-size:12.5px;font-weight:700;justify-self:start;border-radius:99px;padding:1px 10px}
+.c1{background:var(--blue);color:var(--on-blue)}
+.c1 .count{background:var(--paper);color:var(--blue-deep)}
+.c2{background:var(--pale);color:var(--ink);border-color:var(--line)}
+.c2 .count{background:var(--paper);color:var(--blue-deep);border:1px solid var(--line)}
+.c3{background:var(--gold-pale);color:var(--ink)}
+.c3 .count{background:var(--paper);color:var(--gold-ink);border:1px solid #EBD7A8}
+.c4{background:var(--paper);color:var(--ink);border:2px dashed var(--line)}
+.c4 .count{background:var(--bg);color:var(--muted)}
+/* 判定・業態タブはスクリプトなしで切り替える（会員サイトがスクリプトを外しても動くように） */
+.page:has(#qa-yes:checked):has(#qb-yes:checked) #cell-1,
+.page:has(#qa-yes:checked):has(#qb-no:checked) #cell-2,
+.page:has(#qa-no:checked):has(#qb-yes:checked) #cell-3,
+.page:has(#qa-no:checked):has(#qb-no:checked) #cell-4{box-shadow:0 0 0 4px var(--gold);transform:translateY(-2px)}
+.page [hidden]{display:none!important}
+
+/* 判定 */
+.judge{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px}
+.q{display:grid;gap:8px}
+.q .qt{font-weight:700;font-size:15px}
+.q .qt small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg input,.tabs input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.seg label{font-size:14.5px;font-weight:700;padding:8px 18px;border-radius:99px;border:2px solid var(--line);background:var(--paper);color:var(--blue-deep);cursor:pointer}
+.seg input:checked + label{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+.seg input:focus-visible + label,.tabs input:focus-visible + label{outline:3px solid var(--gold);outline-offset:2px}
+.result{border-radius:10px;background:var(--pale);padding:14px 16px;display:none;gap:6px}
+.page:has(#qa-yes:checked):has(#qb-yes:checked) .r11,
+.page:has(#qa-yes:checked):has(#qb-no:checked) .r10,
+.page:has(#qa-no:checked):has(#qb-yes:checked) .r01,
+.page:has(#qa-no:checked):has(#qb-no:checked) .r00{display:grid}
+.result .rt{font-family:var(--display);font-weight:900;font-size:18px;color:var(--blue-deep)}
+.result p{font-size:14.5px}
+
+/* 率 */
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px}
+.formula{font-family:var(--display);font-weight:700;font-size:15.5px;background:var(--pale);border-radius:8px;padding:10px 14px;color:var(--blue-deep)}
+.inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.inputs label{display:grid;gap:4px;font-size:13.5px;font-weight:700;color:var(--muted)}
+.inputs input{font:inherit;font-size:20px;font-weight:700;padding:8px 12px;border:2px solid var(--line);border-radius:8px;width:100%;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
+.inputs input:focus-visible{outline:none;border-color:var(--blue)}
+.out{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.out .big{font-family:var(--display);font-weight:900;font-size:40px;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.2}
+.out .ppl{font-size:15px;font-weight:700}
+.exchip{font-size:12.5px;font-weight:700;color:var(--gold-ink);background:var(--gold-pale);border:1px solid #EBD7A8;border-radius:99px;padding:1px 10px}
+.warn{font-size:13.5px;color:var(--gold-ink);background:var(--gold-pale);border-radius:6px;padding:8px 10px}
+.sample{font-size:12.5px;color:var(--muted)}
+
+/* 記録の型 */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.three div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.three h3{font-size:16px;color:var(--blue-deep)}
+.three ul,.three ol{margin:0;padding-left:1.2em;font-size:14px}
+
+/* 四つの言葉 */
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs label{font-size:14px;font-weight:700;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.tabs input:checked + label{background:var(--blue-deep);border-color:var(--blue-deep);color:var(--on-blue)}
+.words{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px 18px;display:none}
+.page:has(#tab-food:checked) .p-food,
+.page:has(#tab-beauty:checked) .p-beauty,
+.page:has(#tab-shop:checked) .p-shop,
+.page:has(#tab-visit:checked) .p-visit{display:grid}
+.words li{list-style:none;display:grid;grid-template-columns:2em 1fr;gap:8px;padding:12px 0;border-top:1px dashed var(--line);font-size:15px}
+.words li:first-child{border-top:0}
+.words .n{font-family:var(--display);font-weight:900;color:var(--blue);font-size:18px;line-height:1.6}
+.words small{display:block;color:var(--muted);font-size:13px}
+.words ol{margin:0;padding:0}
+
+/* 守ること */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0}
+.rules li{list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14.5px;display:grid;grid-template-columns:1.4em 1fr;gap:6px}
+.rules li::before{content:"✓";color:var(--blue);font-weight:900}
+
+footer{padding-block:40px 48px}
+footer .wrap{border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--muted);display:grid;gap:4px}
+
+@media (max-width:640px){
+  .answer,.rulers,.inputs,.rules,.three{grid-template-columns:1fr}
+  .act{grid-template-columns:1fr;gap:0}
+  .map{grid-template-columns:1fr;min-width:0}
+  .map .axis{display:none}
+}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}.cell.on{transform:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">ファンシフト　指針（簡易版）</p>
+    <h1>優良顧客とファンは、<br>何が違うのですか。</h1>
+    <div class="answer">
+      <div><span class="k yu">優良顧客</span><small>たくさん買ってくださる方。<br>自社で決めた<b>購買・継続の条件</b>を満たす方です。</small></div>
+      <div><span class="k fan">ファン</span><small>代わりに語ってくださる方。<br>紹介・自発的な反応・推奨といった<b>応援の行動</b>が確認できることを、ファンの兆しとして見ます。</small></div>
+    </div>
+    <p class="lead">この二つは、同じ人とは限りません。どちらが大事か、という話ではなく、<b>両方を一緒に見る</b>ための指針です。行動が記録されていない方を、ファンではないと決めつけることはしません。</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">1　物差しは二本</p>
+    <h2>売上表の物差しに、応援の物差しを一本足します</h2>
+    <div class="rulers">
+      <div class="ruler yu">
+        <span class="tag">物差し①　どれだけ買ってくださったか</span>
+        <h3>優良顧客の条件</h3>
+        <ul>
+          <li>業態に合わせて自社で決めます（例：購入金額と継続月数の組み合わせ）</li>
+          <li>見る場所は売上表・購入履歴です</li>
+          <li>比べる期間中は、条件を変えません</li>
+        </ul>
+      </div>
+      <div class="ruler fan">
+        <span class="tag">物差し②　どれだけ応援してくださったか</span>
+        <h3>応援の行動（三つだけ）</h3>
+        <div class="acts">
+          <div class="act"><b>紹介</b><span>どなたかをご紹介くださった</span></div>
+          <div class="act"><b>自発的な反応</b><span>頼んでいないお礼の返信／体験談／企画へのご意見</span></div>
+          <div class="act"><b>推奨</b><span>好意的なレビュー／おすすめの投稿</span></div>
+        </div>
+        <p class="nocount">開封・クリック・購入だけでは数えません。見る期間は、集計した日から数えて直近90日間です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <p class="eyebrow">2　評価の地図</p>
+    <h2>二本の物差しを重ねると、お客様は四つに分かれます</h2>
+    <div class="mapbox">
+      <div class="map" role="table" aria-label="優良顧客の条件と応援の行動で分けた四つの区分">
+        <div class="axis" role="columnheader"></div>
+        <div class="axis top" role="columnheader">応援の行動<br>◯ 確認できた</div>
+        <div class="axis top" role="columnheader">応援の行動<br>― まだ確認できていない</div>
+
+        <div class="axis side" role="rowheader">優良顧客の条件<br>◯ 満たす</div>
+        <div class="cell c1" id="cell-1">
+          <span class="mark">◯条件 × ◯応援</span>
+          <h3>応援の行動が確認できた優良顧客</h3>
+          <p>買い続けてくださり、ファンの兆しも見えている方。心の中までは決めつけず、続けてくださる理由を伺います。</p>
+          <span class="count">分母（A）にも分子（B）にも数える</span>
+        </div>
+        <div class="cell c2" id="cell-2">
+          <span class="mark">◯条件 × ―応援</span>
+          <h3>優良顧客（応援は未確認）</h3>
+          <p>ファンではない、とは決めつけません。記録していないだけかもしれません。まず四つの言葉で理由を伺います。</p>
+          <span class="count">分母（A）にだけ数える</span>
+        </div>
+
+        <div class="axis side" role="rowheader">優良顧客の条件<br>― 満たさない</div>
+        <div class="cell c3" id="cell-3">
+          <span class="mark">―条件 × ◯応援</span>
+          <h3>条件の外で、応援の行動がある方</h3>
+          <p>自社の条件によっては、年に2回しか買わないのに毎回どなたかを紹介してくださる方などが、ここに入ります。売上表の上位にはいなくても、記録シートには残します。</p>
+          <span class="count">率には入れない・記録は残す</span>
+        </div>
+        <div class="cell c4" id="cell-4">
+          <span class="mark">―条件 × ―応援</span>
+          <h3>条件の外で、応援も未確認の方</h3>
+          <p>この方も、ファンではないと決めつけません。行動を確認できたら、記録シートに書き足します。</p>
+          <span class="count">率には入れない</span>
+        </div>
+      </div>
+    </div>
+    <p class="note">分母（A）は、条件を満たす優良顧客の全員です（「◯条件 × ◯応援」と「◯条件 × ―応援」の2区分を足した人数）。条件に当てはまるかどうかは、集計した日に改めて確かめます。記録したときは条件内でも、集計日に外れていれば分母にも分子にも入れません。</p>
+    <p class="note">四つの言葉で伺ったことへのお返事は、ファンシフト率とは別に「お客様の言葉」として残します。こちらから伺ったお返事は、自発的な反応には数えません。一手の手応えと、もともとあった応援を、分けて見るためです。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">3　一人ずつ当てはめる</p>
+    <h2>この方は、地図のどこに入りますか</h2>
+    <div class="judge">
+      <div class="q">
+        <p class="qt">問1　集計した日に、自社で決めた優良顧客の条件を満たしていますか。</p>
+        <div class="seg">
+          <input type="radio" name="qa" id="qa-yes" checked><label for="qa-yes">満たす</label>
+          <input type="radio" name="qa" id="qa-no"><label for="qa-no">満たさない</label>
+        </div>
+      </div>
+      <div class="q">
+        <p class="qt">問2　直近90日に、紹介・自発的な反応・推奨のどれかを確認できましたか。<small>開封・クリック・購入は数えません。同じ方の複数の行動は、1人として数えます。</small></p>
+        <div class="seg">
+          <input type="radio" name="qb" id="qb-yes"><label for="qb-yes">確認できた</label>
+          <input type="radio" name="qb" id="qb-no" checked><label for="qb-no">まだ確認できていない</label>
+        </div>
+      </div>
+      <div class="result r11">
+        <p class="rt">→ 応援の行動が確認できた優良顧客</p>
+        <p>分母（A）にも分子（B）にも数えます。心の中までは決めつけず、続けてくださる理由を伺い、まずお礼をお伝えします。</p>
+      </div>
+      <div class="result r10">
+        <p class="rt">→ 優良顧客（応援は未確認）</p>
+        <p>分母（A）にだけ数えます。ファンではない、とは決めつけません。受信箱・レビュー・電話のメモ・スタッフの記憶を見直し、四つの言葉で続けている理由を伺います。お返事は「お客様の言葉」として、率とは別に残します。</p>
+      </div>
+      <div class="result r01">
+        <p class="rt">→ 条件の外で、応援の行動がある方</p>
+        <p>ファンシフト率には入れませんが、応援の行動は記録シートに残します。売上表の上位にはいなくても、会社のことを外で語ってくださっている方かもしれません。</p>
+      </div>
+      <div class="result r00">
+        <p class="rt">→ 条件の外で、応援も未確認の方</p>
+        <p>ファンシフト率には入れません。この方も、ファンではないと決めつけません。行動を確認できたら、記録シートに書き足します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">4　会社全体で見る</p>
+    <h2>ファンシフト率は、人数と一緒に書きます</h2>
+    <div class="calc">
+      <p class="formula">ファンシフト率 ＝ 応援の行動を確認できた優良顧客数（B）÷ 対象の優良顧客数（A）× 100</p>
+      <div class="inputs" id="inputs" hidden>
+        <label for="inA">対象の優良顧客数（A）
+          <input id="inA" type="number" inputmode="numeric" min="0" step="1" value="40">
+        </label>
+        <label for="inB">うち、応援の行動を確認できた人数（B）
+          <input id="inB" type="number" inputmode="numeric" min="0" step="1" value="6">
+        </label>
+      </div>
+      <div class="out">
+        <span class="big" id="rate">15.0%</span>
+        <span class="ppl" id="ppl">40人中 6人</span>
+        <span class="exchip" id="exchip">例の数字（目安ではありません）</span>
+      </div>
+      <p class="warn" id="warn" hidden></p>
+      <p class="sample">40人・6人は、使い方を見ていただくための例の数字です。自社の人数に置き換えて計算してください<span id="savenote" hidden>（上の欄に入れた数字は保存されません）</span>。</p>
+    </div>
+    <p class="note">一周の始めと90日後に数えます（持ち寄り会に出すときは、その都度数えます）。これは運用の物差しで、業界共通の標準ではありません。目標の％も決めていません。まず自社の今の値を知り、同じ条件で変化を見ます。率だけで関係が深まった理由を決めつけず、継続率やLTVも一緒に見ます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">5　応援行動の記録シート（要点）</p>
+    <h2>どこで・誰が・どう記録するか</h2>
+    <div class="three">
+      <div>
+        <h3>どこで見つけるか</h3>
+        <ul>
+          <li>受信箱（お問い合わせ・お便り・返信）</li>
+          <li>レビュー（自社サイト・モール・SNS）</li>
+          <li>電話のメモ</li>
+          <li>スタッフの記憶</li>
+        </ul>
+      </div>
+      <div>
+        <h3>誰が記録するか</h3>
+        <ul>
+          <li>記録する人を決めます</li>
+          <li>一人で抱えないよう、見つけた人が誰でも書き足せる共有の表に置きます</li>
+          <li>数える人と同じでも別でも構いません</li>
+        </ul>
+      </div>
+      <div>
+        <h3>どう書くか（1件＝1行動）</h3>
+        <ol>
+          <li>行動のあった日（分からなければ「◯月ごろ」）</li>
+          <li>お客様（社内の顧客番号）</li>
+          <li>行動の種類</li>
+          <li>どこで見つけたか</li>
+          <li>行動の中身（あったことだけ）</li>
+          <li>記録した人</li>
+        </ol>
+      </div>
+    </div>
+    <p class="note">「熱心なファンだと思う」のような解釈は書かず、あったことだけを書きます。紹介の記録に、紹介された方のお名前は書きません。AIの道具や持ち込み窓口に出すときは、お名前・連絡先だけでなく、顧客番号も消してください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">6　続けている理由を伺う質問集（要点）</p>
+    <h2>最初に伺う四つの言葉を、業態に合わせて</h2>
+    <div class="tabs">
+      <input type="radio" name="gyo" id="tab-food" checked><label for="tab-food">食品・健康食品の通販</label>
+      <input type="radio" name="gyo" id="tab-beauty"><label for="tab-beauty">化粧品・美容の通販</label>
+      <input type="radio" name="gyo" id="tab-shop"><label for="tab-shop">小売店（店舗）</label>
+      <input type="radio" name="gyo" id="tab-visit"><label for="tab-visit">来店型のサービス（サロン・整骨院・教室など）</label>
+    </div>
+    <div class="words p-food"><ol>
+      <li><span class="n">1</span><span>「いつも◯◯をご利用いただき、ありがとうございます。」<small>（例：定期便やお届けの回数、続けていただいている月数に触れたお礼を一言）</small></span></li>
+      <li><span class="n">2</span><span>「もしよろしければ、◯◯を続けてくださっている理由を、一つだけ教えていただけませんか。」</span></li>
+      <li><span class="n">3</span><span>「最近、◯◯が毎日の食卓や暮らしの中でお役に立った場面はありましたか。」</span></li>
+      <li><span class="n">4</span><span>「いただいたお言葉を、商品づくりやご案内に生かしてもよろしいでしょうか。」</span></li>
+    </ol></div>
+    <div class="words p-beauty"><ol>
+      <li><span class="n">1</span><span>「いつも◯◯をご愛用いただき、ありがとうございます。」<small>（例：お使いいただいている商品や、リピートのご注文に触れたお礼を一言）</small></span></li>
+      <li><span class="n">2</span><span>「もしよろしければ、◯◯を使い続けてくださっている理由を、一つだけ教えていただけませんか。」</span></li>
+      <li><span class="n">3</span><span>「最近、◯◯が毎日の暮らしの中でお役に立った場面はありましたか。」</span></li>
+      <li><span class="n">4</span><span>「いただいたお言葉を、商品づくりやご案内に生かしてもよろしいでしょうか。」</span></li>
+    </ol></div>
+    <div class="words p-shop"><ol>
+      <li><span class="n">1</span><span>「いつも当店をご利用いただき、ありがとうございます。」<small>（例：よくお求めの品や、ご来店の頻度に触れたお礼を一言）</small></span></li>
+      <li><span class="n">2</span><span>「もしよろしければ、当店に通い続けてくださっている理由を、一つだけ教えていただけませんか。」</span></li>
+      <li><span class="n">3</span><span>「最近、当店でお求めの品がお役に立った場面はありましたか。」</span></li>
+      <li><span class="n">4</span><span>「いただいたお言葉を、品ぞろえやご案内に生かしてもよろしいでしょうか。」</span></li>
+    </ol></div>
+    <div class="words p-visit"><ol>
+      <li><span class="n">1</span><span>「いつも◯◯にお越しいただき、ありがとうございます。」<small>（例：通っていただいている期間や、前回の施術・レッスンに触れたお礼を一言）</small></span></li>
+      <li><span class="n">2</span><span>「もしよろしければ、通い続けてくださっている理由を、一つだけ教えていただけませんか。」</span></li>
+      <li><span class="n">3</span><span>「最近、◯◯に通っていることがお役に立った場面はありましたか。」</span></li>
+      <li><span class="n">4</span><span>「いただいたお言葉を、サービスづくりやご案内に生かしてもよろしいでしょうか。」</span></li>
+    </ol></div>
+    <p class="note">四つの順番は変えず、言い回しだけを変えます。商品づくりやご案内に生かすのは、四つ目の言葉でお許しをいただけたお言葉だけです。健康食品・化粧品・整骨院などでは、いただいたお言葉を広告やご案内に使うときに表現の決まりがあります。使う前に表現を確認してください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">7　守ること</p>
+    <h2>評価をぶらさないための六つの約束</h2>
+    <ul class="rules">
+      <li><span>行動が記録されていない方を、ファンではないと決めつけません。</span></li>
+      <li><span>お客様の心の中は決めつけず、確かめられる行動で見ます。</span></li>
+      <li><span>比べる期間中は、優良顧客の条件と数える行動の決め方を変えません。</span></li>
+      <li><span>率は必ず人数と一緒に書きます。人数が少ないうちは率が大きく動きます。</span></li>
+      <li><span>紹介をお願いするのは、応援したくなった理由を丁寧に理解した後です。</span></li>
+      <li><span>お返事がなくても追いかけません。お返事がないことも記録の一つです。</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>優良顧客の「測り方」が変わると、会社の「増え方」まで変わりはじめる。</p>
+    <p>株式会社ルーチェ　西村公児　／　ファンシフトクラブ</p>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  // 判定と業態タブはCSSだけで切り替える。スクリプトは計算機だけ
+  document.getElementById("inputs").hidden=false;
+  document.getElementById("savenote").hidden=false;
+
+  // ファンシフト率
+  var inA=document.getElementById("inA"),inB=document.getElementById("inB");
+  function calc(){
+    var a=Math.floor(+inA.value),b=Math.floor(+inB.value),w=document.getElementById("warn");
+    var rate=document.getElementById("rate"),ppl=document.getElementById("ppl");
+    w.hidden=true;
+    if(!(a>0)||b<0||isNaN(b)){rate.textContent="―";ppl.textContent="Aに1人以上を入れてください";return;}
+    if(b>a){rate.textContent="―";ppl.textContent=a+"人中 "+b+"人";w.textContent="BがAより多くなっています。Bは、Aに入っている方のうち応援の行動を確認できた人数です。";w.hidden=false;return;}
+    rate.textContent=(b/a*100).toFixed(1)+"%";
+    ppl.textContent=a+"人中 "+b+"人";
+  }
+  function edited(){document.getElementById("exchip").hidden=true;calc();}
+  inA.addEventListener("input",edited);inB.addEventListener("input",edited);calc();
+})();
+</script>
+</body>
+</html>
